@@ -66,10 +66,10 @@ positionerades och stylades.
 
 ##Screenshots på färdig applikation
 
-<img src="Screenshot_1618927197.png" height="224">
+<img src="Screenshot_1618927197.png" width="224">
 
 **Bild på MainActivity**
 
-<img src="Screenshot_1618927203.png" height="224">
+<img src="Screenshot_1618927203.png" width="224">
 
 **Bild på SecondActivity med fragment**
