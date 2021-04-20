@@ -66,8 +66,8 @@ positionerades och stylades.
 
 ##Screenshots på färdig applikation
 
-![](Screenshot_1618927197.png)
+![](Screenshot_1618927197.png =250x)
 **Bild på MainActivity**
 
-![](Screenshot_1618927203.png)
+![](Screenshot_1618927203.png = 250x)
 **Bild på SecondActivity med fragment**
