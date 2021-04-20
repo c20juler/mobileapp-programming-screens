@@ -8,14 +8,14 @@
     
     <fragment
         android:name="com.example.screens.BlankFragment"
-        android:layout_width="250dp"
-        android:layout_height="100dp"
+        android:layout_width="380dp"
+        android:layout_height="250dp"
         android:tag="fragment_blank"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginBottom="250dp"/>
+        android:layout_marginBottom="380dp"/>
     <Button
         android:id="@+id/close"
         android:layout_width="wrap_content"
