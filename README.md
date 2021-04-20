@@ -1,42 +1,72 @@
 
-# Rapport
+# Rapport Screens
 
-**Skriv din rapport här!**
 
-_Du kan ta bort all text som finns sedan tidigare_.
+En andra aktivitet lades till genom File -> New -> Activity. 
 
-## Följande grundsyn gäller dugga-svar:
 
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
+```java
+Button button = findViewById(R.id.start);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+                Log.d("TAG","Start activity");
+            }
+        });
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+**Figur 1**
+
+En knapp skapades i activity_main layout som i MainActivity java filen hämtades med id. 
+I figur 1 deklarerades och instansierades variabeln button och lade till en onclick lyssnare.
+En intent deklarerades och instansierades med klassen från SecondActivity. På så vis kommer 
+SecondActivity att öppnas vid knapptryck. 
+
+
+
+```java
+Button close = findViewById(R.id.close);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("TAG", "Close activity");
+                finish();
+            }
+        });
 ```
+**Figur 2**
 
-Bilder läggs i samma mapp som markdown-filen.
+Ytterligare en knapp lades till, fast denna gång i SecondActivity för att kunna stänga 
+aktiviteten och komma tillbaka till MainActivity. Knappen deklarerades och instansierades på samma 
+sätt som i Figur 1 men denna gång körs funktionen finish() vid knapptryck istället enligt figur 2.
 
-![](android.png)
 
-Läs gärna:
+```java
+<fragment
+        android:name="com.example.screens.BlankFragment"
+        android:layout_width="380dp"
+        android:layout_height="250dp"
+        android:tag="fragment_blank"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="380dp"/>
+```
+**Figur 3**
 
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.
+Ett nytt fragment lades till genom File -> New -> Fragment.
+Fragmentet lades till i SecondActivity layouten med android.name="fragmentet...". Fragmentet 
+positionerades med constrainlayout och margin. Fragmentet stylades och redigerade textview 
+elementet i fragmentets layout fil. Slutligen lades en image view till i fragmentets layout som
+positionerades och stylades.
+
+
+##Screenshots på färdig applikation
+
+![](Screenshot_1618927197.png)
+**Bild på MainActivity**
+
+![](Screenshot_1618927203.png)
+**Bild på SecondActivity med fragment**
